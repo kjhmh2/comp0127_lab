@@ -10,6 +10,7 @@ from lab03_example_srv.srv import point_rotRequest
 from lab03_example_srv.srv import point_rot
 
 
+
 def point_rotation_client():
     rospy.wait_for_service('rotate_pt')
 
@@ -31,6 +32,7 @@ def point_rotation_client():
         req.q.y = quaternion[1]
         req.q.z = quaternion[2]
         req.q.w = quaternion[3]
+
         res = client(req)
 
         print(res)

@@ -13,7 +13,7 @@ def handle_point_rotation(req):
 
     #TODO: After temporarily storing all request values into variables, convert the requested point by the requested quaternion and return it as a response.
     px = req.p.x
-    py = req.p.x
+    py = req.p.y
     pz = req.p.z
 
     qx = req.q.x
@@ -30,6 +30,7 @@ def handle_point_rotation(req):
     res.out_p.x = px*(1 - 2*qys - 2*qzs) + py*(2*(qx*qy - qz*qw)) + pz*(2*(qx*qz - qy*qw))
     res.out_p.y = px*(2*(qx*qy - qz*qw)) + py*(1 - 2*qxs - 2*qzs) + pz*(2*(qy*qz - qx*qw))
     res.out_p.z = px*(2*(qx*qz - qy*qw)) + py*(2*(qy*qz - qx*qw)) + pz*(1 - 2*qys - 2*qxs)
+
 
     return res
 

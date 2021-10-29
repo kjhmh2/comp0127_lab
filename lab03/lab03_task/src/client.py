@@ -9,6 +9,7 @@ import time
 from lab03_task.srv import rotmat2quatRequest
 from lab03_task.srv import rotmat2quat
 
+
 def rot2quat_client():
     rospy.wait_for_service('rotmat2quat')
 
@@ -21,9 +22,14 @@ def rot2quat_client():
         req.R.data = []
 
         #TODO: create a random request matrix
+
         for i in range(9):
             req.R.data.append(random.uniform(-1, 1))
+
+
+
         res = client(req)
+
         print(res)
 
         time.sleep(3)
