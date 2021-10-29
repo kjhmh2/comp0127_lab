@@ -11,7 +11,7 @@ def listener():
 
     rospy.init_node('listener', anonymous=True)
 
-    #Define a subscriber.
+    #TODO: Define a subscriber.
     rospy.Subscriber("chatter", Int64, callback)
 
     rospy.spin()

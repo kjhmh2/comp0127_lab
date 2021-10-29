@@ -25,13 +25,13 @@ def joint_pub():
 
         t = rospy.Time.now().secs
 	
-	##TODO: Define the joint trajectories.
-        joint1.data = 200 * math.pi / 180 * math.sin(2 * math.pi * t / 10)
-        joint2.data =  50 * math.pi / 180 * math.sin(2 * math.pi * t / 12)
-        joint3.data = -80 * math.pi / 180 * math.sin(2 * math.pi * t / 15)
-        joint4.data =  60 * math.pi / 180 * math.sin(2 * math.pi * t / 11)
+        ##TODO: Define the joint trajectories.
+        joint1 = 200 * math.pi / 180 * math.sin(2 * math.pi * t / 10)
+        joint2 =  50 * math.pi / 180 * math.sin(2 * math.pi * t / 12)
+        joint3 = - 80 * math.pi / 180 * math.sin(2 * math.pi * t / 15)
+        joint4 = 60 * math.pi / 180 * math.sin(2 * math.pi * t / 11)
 
-	##TODO: Publish all messages.
+        ##TODO: Publish all messages.
         pub1.publish(joint1)
         pub2.publish(joint2)
         pub3.publish(joint3)
