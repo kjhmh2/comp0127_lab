@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <launch>
-  <param name="robot_description"
-         command="$(find xacro)/xacro --inorder '$(find open_manipulator_description)/urdf/open_manipulator.urdf.xacro'"/>
+    <param name="robot_description"
+           command="$(find xacro)/xacro --inorder '$(find youbot_description)/robots/youbot_arm_only.urdf.xacro'"/>
 
     <!-- send joint values -->
     <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui">
@@ -11,7 +11,7 @@
 
     <!-- Combine joint values -->
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
-    <node name="open_fkine_node" pkg="lab04_example" type="lab04_example.py" output="screen"/>
-  <!-- Show in Rviz -->
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find open_manipulator_description)/rviz/open_manipulator_links_hidden.rviz"/>
+    <node name="youbot_kdl_node" pkg="lab05_example" type="lab05_task.py" output="screen"/>
+    <!-- Show in Rviz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find youbot_simulator)/config/youbot.rviz"/>
 </launch>
